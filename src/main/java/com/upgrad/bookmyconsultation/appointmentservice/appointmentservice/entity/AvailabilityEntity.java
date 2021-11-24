@@ -14,9 +14,6 @@ public class AvailabilityEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-
-
     @Column(name="availability_date")
     private String availabilityDate;
     @Column(name="doctor_id")

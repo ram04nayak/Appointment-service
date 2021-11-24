@@ -2,6 +2,7 @@ package com.upgrad.bookmyconsultation.appointmentservice.appointmentservice.serv
 
 import com.upgrad.bookmyconsultation.appointmentservice.appointmentservice.dto.AppointementResponseDTO;
 import com.upgrad.bookmyconsultation.appointmentservice.appointmentservice.dto.AppointmentrequestDTO;
+import com.upgrad.bookmyconsultation.appointmentservice.appointmentservice.dto.AvailabilityDTO;
 import com.upgrad.bookmyconsultation.appointmentservice.appointmentservice.entity.AppointmentEntity;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface AppointmentService {
     AppointmentEntity getAppointmentDetail(String appointmentId);
 
     List<AppointmentEntity> getAppointmentDetailByUserId(String userId);
+
 }

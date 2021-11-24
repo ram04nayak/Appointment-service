@@ -8,79 +8,36 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 import javax.persistence.GeneratedValue;
+import java.util.List;
+import java.util.Map;
 
 
-@JsonPropertyOrder({"id"})
 public class AvailabilityDTO {
 
-
-@Id
-@GeneratedValue(generator = "system-uuid")
-@GenericGenerator(name = "system-uuid", strategy = "uuid")
-private String id;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "dd-MM-yyyy")
-    @JsonFormat(pattern = "dd-MM-yyyy")
-
-    private String availability_date;
-
     private String doctorId;
-    private boolean isBooked;
-    private String timeSlot;
 
-    public void setId(String id) {
-        this.id = id;
+    private Map<String, List<String>> slots;
+    public Map<String, List<String>> getSlots() {
+        return slots;
     }
 
-    public void setAvailability_date(String availability_date) {
-        this.availability_date = availability_date;
-    }
-
-    public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    public void setBooked(boolean booked) {
-        isBooked = booked;
-    }
-
-    public void setTimeSlot(String timeSlot) {
-        this.timeSlot = timeSlot;
-    }
-
-
-    public String getId() {
-        return id;
-    }
-
-    public String getAvailability_date() {
-        return availability_date;
+    public void setSlots(Map<String, List<String>> slots) {
+        this.slots = slots;
     }
 
     public String getDoctorId() {
         return doctorId;
     }
 
-    public boolean isBooked() {
-        return isBooked;
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
-
-    public String getTimeSlot() {
-        return timeSlot;
-    }
-
-
-
-public AvailabilityDTO() {
-}
 
     @Override
     public String toString() {
         return "AvailabilityDTO{" +
-                "id='" + id + '\'' +
-                ", availability_date='" + availability_date + '\'' +
-                ", doctorId='" + doctorId + '\'' +
-                ", isBooked=" + isBooked +
-                ", timeSlot='" + timeSlot + '\'' +
+                "doctorId='" + doctorId + '\'' +
+                ", slots=" + slots +
                 '}';
     }
 }
